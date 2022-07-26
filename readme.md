@@ -1,5 +1,9 @@
 # C
 
+Some resolutions of exercises in C to help a family member who is taking his first steps in programming
+
+General information
+
 ## basic types
 
 | type | size | value range | 
