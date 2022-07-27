@@ -9,3 +9,5 @@ Nota: N y K son números naturales, ambas son variables de entrada.
 5.4 Mostrar por pantalla los números enteros que se encuentran comprendidos en el intervalo [–K ... K] en orden ascendente y luego en orden descendente.
 5.5 Mostrar por pantalla los términos de la sucesión 1,3,6,10,15,21,28..... que sean menores al número K.
 5.6 Calcular el promedio de N números
+
+6) Escriba un programa en C que escriba la suma de los N primeros números impares

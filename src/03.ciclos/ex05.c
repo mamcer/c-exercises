@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// 5) Realizar un programa en C, utilizando estructuras de repetición condicional para resolver cada o de los siguientes problemas:
+
 int main(int argc, char *argv[])
 {
     if (argc != 3)
@@ -75,7 +77,82 @@ int main(int argc, char *argv[])
 
         i = i + 1;
     }
-            printf("la suma de los N(%d) primeros multiplos de K(%d) es: %d\n", n, k, suma);
+    printf("la suma de los N(%d) primeros multiplos de K(%d) es: %d\n", n, k, suma);
+
+    // 5.4 Mostrar por pantalla los números enteros que se encuentran comprendidos en el intervalo [–K ... K] en orden ascendente y luego en orden descendente.
+    int minimo = k * -1 - 1;
+    j = 0;
+    printf("\n5.4 numeros entre [–K ... K] asc\n");
+    while (minimo <= k && j < arrSize)
+    {
+        i = 0;
+        int actual = k + 1;
+        while (i < arrSize)
+        {
+            if (arreglo[i] > minimo && arreglo[i] < actual)
+            {
+                actual = arreglo[i];
+            }
+
+            i += 1;
+        }
+        if (actual <= k)
+        {
+            printf("%d ", actual);
+        }
+        minimo = actual;
+        i += 1;
+    }
+    printf("\n");
+
+    int mayor = k + 1;
+    j = 0;
+    printf("\n5.4 numeros entre [–K ... K] desc\n");
+    while (mayor >= k * -1 && j < arrSize)
+    {
+        i = 0;
+        int actual = k * -1 - 1;
+        ;
+        while (i < arrSize)
+        {
+            if (arreglo[i] < mayor && arreglo[i] > actual)
+            {
+                actual = arreglo[i];
+            }
+
+            i += 1;
+        }
+        if (actual >= k * -1)
+        {
+            printf("%d ", actual);
+        }
+        mayor = actual;
+        i += 1;
+    }
+    printf("\n");
+
+    // 5.5 Mostrar por pantalla los términos de la sucesión 1,3,6,10,15,21,28..... que sean menores al número K
+    printf("\n5.5 numeros sucesión 1,3,6,10,15,21,28.. menores a K\n");
+    int actual = 1;
+    i = 1;
+    while (actual <= k)
+    {
+        printf("%d,", actual);
+        i += 1;
+        actual = actual + i;
+    }
+    printf("\n");
+
+    // 5.6 Calcular el promedio de N números
+    printf("\n5.6 promedio de primeros N números\n");
+    float total = 0;
+    i = 0;
+    while (i < n && i < arrSize)
+    {
+        total += arreglo[i];
+        i += 1;
+    }
+        printf("promedio: %f\n", total / n);
 
     return 0;
 }
