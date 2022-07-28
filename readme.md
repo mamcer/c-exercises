@@ -6,18 +6,25 @@ General information
 
 ## basic types
 
-| type | size | value range | 
-| -- | -- | -- |
-| char 	| 1 byte | -128 to 127 or 0 to 255 | 
-| unsigned char | 1 byte | 0 to 255 | 
-| signed char | 1 byte | -128 to 127 | 
-| int | 2 or 4 bytes | -32,768 to 32,767 or -2,147,483,648 to 2,147,483,647 |
-| unsigned int | 2 or 4 bytes | 0 to 65,535 or 0 to 4,294,967,295 |
-| short | 2 bytes | -32,768 to 32,767 |
-| unsigned short | 2 bytes | 0 to 65,535 |
-| long  | 8 bytes or (4bytes for 32 bit OS) | -9223372036854775808 to 9223372036854775807 |
-| unsigned long | 8 bytes | 0 to 18446744073709551615 |
-
+| Type | Explanation| Minimum size \(bits\)| Format specifier| Range| Suffix for decimal constants |
+| ---|---|---|---|---|---|
+| char | Smallest addressable unit of the machine that can contain basic character set\. It is an integer type\. Actual type can be either signed or unsigned\. It contains CHAR\_BIT bits\.&\#91;3&\#93; | 8 | %c | CHAR\_MIN / CHAR\_MAX | n/a | 
+| signed char | Of the same size as char, but guaranteed to be signed\. Capable of containing at least the \[−127,&\#160;\+127\] range\.&\#91;3&\#93;&\#91;a&\#93; | 8 | %c \(or %hhi for numerical output\) | SCHAR\_MIN / SCHAR\_MAX&\#91;5&\#93; | n/a
+| unsigned char | Of the same size as char, but guaranteed to be unsigned\. Contains at least the \[0,&\#160;255\] range\.&\#91;6&\#93; | 8 | %c \(or %hhu for numerical output\) | 0 / UCHAR\_MAX | n/a
+| short short int signed short signed short int | Short signed integer type\. Capable of containing at least the \[−32,767,&\#160;\+32,767\] range\.&\#91;3&\#93;&\#91;a&\#93; | 16 | %hi or %hd | SHRT\_MIN / SHRT\_MAX | n/a
+| unsigned short unsigned short int | Short unsigned integer type\. Contains at least the \[0, 65,535\] range\.&\#91;3&\#93; | 16 | %hu | 0 / USHRT\_MAX | n/a
+| int signed signed int | Basic signed integer type\. Capable of containing at least the \[−32,767,&\#160;\+32,767\] range\.&\#91;3&\#93;&\#91;a&\#93; | 16 | %i or %d | INT\_MIN / INT\_MAX | none
+| unsigned unsigned int | Basic unsigned integer type\. Contains at least the \[0, 65,535\] range\.&\#91;3&\#93; | 16 | %u | 0 / UINT\_MAX | u or U
+| long long int signed long signed long int | Long signed integer type\. Capable of containing at least the \[−2,147,483,647,&\#160;\+2,147,483,647\] range\.&\#91;3&\#93;&\#91;a&\#93; | 32 | %li or %ld | LONG\_MIN / LONG\_MAX | l or L&\#91;7&\#93;
+| unsigned long unsigned long int | Long unsigned integer type\. Capable of containing at least the \[0, 4,294,967,295\] range\.&\#91;3&\#93; | 32 | %lu | 0 / ULONG\_MAX | both u or U and l or L
+| long long long long intsigned long long signed long long int | Long long signed integer type\. Capable of containing at least the \[−9,223,372,036,854,775,807,&\#160;\+9,223,372,036,854,775,807\] range\.&\#91;3&\#93;&\#91;a&\#93; Specified since the C99 version of the standard\. | 64 | %lli or %lld | LLONG\_MIN / LLONG\_MAX | ll or LL
+| unsigned long long unsigned long long int | Long long unsigned integer type\. Contains at least the \[0, \+18,446,744,073,709,551,615\] range\.&\#91;3&\#93; Specified since the C99 version of the standard\. | 64 | %llu | 0 / ULLONG\_MAX | both u or U and ll or LL
+| float | Real floating\-point type, usually referred to as a single\-precision floating\-point type\. Actual properties unspecified \(except minimum limits\); however, on most systems, this is the IEEE 754 single\-precision binary floating\-point format \(32 bits\)\. This format is required by the optional Annex F "IEC 60559 floating\-point arithmetic"\. | | Converting from text:&\#91;b&\#93;%f %F%g %G%e %E%a %A | | f or F
+| double | Real floating\-point type, usually referred to as a double\-precision floating\-point type\. Actual properties unspecified \(except minimum limits\); however, on most systems, this is the IEEE 754 double\-precision binary floating\-point format \(64 bits\)\. This format is required by the optional Annex F "IEC 60559 floating\-point arithmetic"\ | | %lf %lF%lg %lG%le %lE%la %lA&\#91;c&\#93; | |
+| long double | Real floating\-point type, usually mapped to an extended precision floating\-point number format\. Actual properties unspecified\. It can be either x86 extended\-precision floating\-point format \(80 bits, but typically 96 bits or 128 bits in memory with padding bytes\), the non\-IEEE "double\-double" \(128 bits\), IEEE 754 quadruple\-precision floating\-point format \(128 bits\), or the same as double\. See the article on long double for details\. | | %Lf %LF%Lg %LG%Le %LE%La %LA&\#91;c&\#93; | l or L
+ 
+> more info: [wikipedia](https://en.wikipedia.org/wiki/C_data_types)
+                        
 ## scanf format string
 
 | format | description |
