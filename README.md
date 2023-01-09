@@ -1,6 +1,6 @@
 # C
 
-Some resolutions of exercises in C to help a family member who is taking his first steps in programming
+Some exercise resolutions in C to help a family member who is taking his first steps in programming
 
 ## command line
 
