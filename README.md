@@ -21,7 +21,11 @@ you should see something like
 
 compile a program
 
-General information
+    gcc file.c
+
+it will generate an executable `a.out` file. You can change the name to `main` for example running
+
+    gcc file.c -o main
 
 ## basic types
 
